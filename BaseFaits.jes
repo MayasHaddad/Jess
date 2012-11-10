@@ -1,0 +1,11 @@
+(assert (voile))
+
+(assert (sport))
+
+(assert (bateau))
+
+(assert (quille 0))
+
+(assert (habitable))
+
+(assert (> (longueur) 13))

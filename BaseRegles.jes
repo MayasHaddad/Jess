@@ -1,0 +1,83 @@
+(defrule r1 "regle 1" 
+	(bateau) 
+	(sport) 
+ 	=> 
+	(assert (voilier))
+)
+
+(defrule r2 "regle 2" 
+	(bateau) 
+	(plaisence) 
+	(voile) 
+	=> 
+	(assert (voilier))
+)
+
+(defrule r3 "regle 3" 
+	(voilier) 
+	(voile_latine_triangulaire FALSE) 
+	=> 
+	(assert (greement_aurique))
+)
+
+(defrule r4 "regle 4" 
+	(quille) 
+	=> 
+	(assert (quaillard))
+)
+
+
+(defrule r5 "regle 5" 
+	(quille FALSE)
+	(voilier) 
+	=> 
+	(assert (quaillard))
+)
+
+(defrule r6 "regle 6" 
+	(habitable)
+	(voilier)
+	=>	
+	(assert voilier_de_croisiere)
+	(assert (portable FALSE)) 
+)
+
+(defrule r7 "regle 7" 
+	(<= longueur 8)
+	=>	
+	(assert (<= longueur 13))
+	(assert (<= longueur 10)) 
+)
+
+(defrule r8 "regle 8" 
+	(quillard)
+	=>	
+	(assert (portable FALSE)) 
+)
+
+(defrule r9 "regle 9" 
+	(> longueur 13)
+	=>	
+	(assert (> longueur 10)) 
+)
+
+(defrule r10 "regle 10" 
+	(quaillard)
+	(quaillard_de_regate FALSE)
+	=>	
+	(assert (quaillard_de_croisiere FALSE)) 
+)
+
+(defrule r11 "regle 11" 
+	(quaillard)
+	(sport)
+	=>	
+	(assert (quaillard_de_sport)) 
+)
+
+(defrule r12 "regle 11" 
+	(quaillard)
+	(sport)
+	=>	
+	(assert (quaillard_de_sport)) 
+)
